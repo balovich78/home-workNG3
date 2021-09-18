@@ -1,0 +1,11 @@
+services:
+    web:
+        image: nginx:latest
+        ports:
+            - "80:80"
+            - "443:443"
+        volumes:
+            - ./nginx/conf.d:/etc/nginx/conf.d
+            - ./nginx.crt /etc/ssl/certs/nginx.crt
+            - ./nginx.key /etc/ssl/private/nginx.key
+      
